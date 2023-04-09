@@ -4,8 +4,8 @@
 
 int main(int argc, char* argv[]) {
   int b64strlen[256] = {0};
-  if(argc > 0) {
-    printf("generate wireguard public key by luckwgkey like as ");
+  if(argc > 1) {
+    printf("generate wireguard public key by luckwgkey start with ");
     for(int i = 1; i < argc ; i++) {
       printf("%s ", argv[i]);
       b64strlen[i] = strlen(argv[i]);
@@ -13,6 +13,10 @@ int main(int argc, char* argv[]) {
     printf("\n");
 
     printf("use \"Ctrl+C\" to quit in anytime \n\n");
+  } else {
+    printf("usage :\n");
+    printf("\tluckwgkey MY TEST FIRE , luckwgkey will lookup wireguard public key start with 'MY' or 'TEST' or 'FIRE' \n");
+    return 0;
   }
 
   do {
